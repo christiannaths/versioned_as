@@ -31,19 +31,19 @@ function versioned_as(alt_version, redirect_url){
 
 
   /*  Tests to determine which alternate version is available
-          desktop_version_available:    We're simply checking to see if we
-                                        have called the function using "desktop"
-                                        as the first parameter. That means there
-                                        is a desktop version of this page
-                                        availabe. Evaluates to true or false.
+          desktop_version_is_available:   We're simply checking to see if we
+                                          have called the function using "desktop"
+                                          as the first parameter. That means there
+                                          is a desktop version of this page
+                                          availabe. Evaluates to true or false.
 
-          mobile_version_available:     Similar to the test above, but checking
-                                        the first parameter for "mobile". Evaluates
-                                        to true or false.
+          mobile_version_is_available:    Similar to the test above, but checking
+                                          the first parameter for "mobile". Evaluates
+                                          to true or false.
 
   */
-  var desktop_version_available = alt_version == "desktop";
-  var mobile_version_available = alt_version == "mobile";
+  var desktop_version_is_available = alt_version == "desktop";
+  var mobile_version_is_available = alt_version == "mobile";
 
   /*  Tests to determine if a specific version was requested
           user_did_not_request_mobile_version:    Here we're just checking if there is
@@ -82,8 +82,8 @@ function versioned_as(alt_version, redirect_url){
                                         desktop version. Evaluates to either true
                                         or false.
   */
-  var should_redirect_for_mobile = device_is_mobile && mobile_version_available && user_did_not_request_desktop_version;
-  var should_redirect_for_desktop = device_is_desktop && desktop_version_available && user_did_not_request_mobile_version;
+  var should_redirect_for_mobile = device_is_mobile && mobile_version_is_available && user_did_not_request_desktop_version;
+  var should_redirect_for_desktop = device_is_desktop && desktop_version_is_available && user_did_not_request_mobile_version;
 
   /*  The redirection, if necessary
           Here we are saying "if either the 'should_redirect_to_mobile' test OR the
