@@ -28,9 +28,7 @@ Next, call the <tt>versioned_as();</tt> function, passing in two parameters, bot
     <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
     <script type="text/javascript" src="javascripts/versioned_as.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
         versioned_as("mobile", "m/index.html")
-      });
     </script>
 
 
